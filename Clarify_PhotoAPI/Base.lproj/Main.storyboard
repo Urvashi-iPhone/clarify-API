@@ -1,26 +1,74 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U0z-CC-hEx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Clarifai-->
+        <scene sceneID="qH9-9F-sbE">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="Clarifai" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U0z-CC-hEx" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="hmO-3P-6dG"/>
+                        <viewControllerLayoutGuide type="bottom" id="PLP-d6-k4p"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="KWd-Gk-vtB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAj-Xw-COG">
+                                <rect key="frame" x="23" y="49" width="328" height="328"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GAj-Xw-COG" secondAttribute="height" multiplier="1:1" id="kpT-Po-kT7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBL-p9-Yu3">
+                                <rect key="frame" x="108" y="426" width="105" height="34"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Select Image">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="U0z-CC-hEx" eventType="touchUpInside" id="lvN-xJ-4Fw"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TMN-Qu-ESs">
+                                <rect key="frame" x="63" y="504" width="288" height="82"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sBL-p9-Yu3" firstAttribute="top" secondItem="TMN-Qu-ESs" secondAttribute="bottom" constant="8" id="5Nd-UW-tZQ"/>
+                            <constraint firstItem="GAj-Xw-COG" firstAttribute="top" secondItem="KWd-Gk-vtB" secondAttribute="topMargin" id="73a-jj-EUO"/>
+                            <constraint firstItem="TMN-Qu-ESs" firstAttribute="trailing" secondItem="KWd-Gk-vtB" secondAttribute="trailingMargin" id="CyT-bJ-VCw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GAj-Xw-COG" secondAttribute="trailing" constant="-20" id="XZn-mR-Uzd"/>
+                            <constraint firstAttribute="centerX" secondItem="sBL-p9-Yu3" secondAttribute="centerX" id="Yud-kZ-cxj"/>
+                            <constraint firstItem="GAj-Xw-COG" firstAttribute="leading" secondItem="KWd-Gk-vtB" secondAttribute="leadingMargin" constant="-20" id="a3i-MT-5Fl"/>
+                            <constraint firstItem="PLP-d6-k4p" firstAttribute="top" secondItem="sBL-p9-Yu3" secondAttribute="bottom" constant="20" id="iK0-oN-WhY"/>
+                            <constraint firstItem="TMN-Qu-ESs" firstAttribute="top" secondItem="GAj-Xw-COG" secondAttribute="bottom" constant="8" id="kZD-oQ-6Je"/>
+                            <constraint firstItem="TMN-Qu-ESs" firstAttribute="leading" secondItem="KWd-Gk-vtB" secondAttribute="leadingMargin" id="phd-lc-emj"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Clarifai" id="RRR-p1-M6M"/>
+                    <connections>
+                        <outlet property="button" destination="sBL-p9-Yu3" id="J7r-ue-CaQ"/>
+                        <outlet property="imageView" destination="GAj-Xw-COG" id="BOh-Yd-Yqu"/>
+                        <outlet property="textView" destination="TMN-Qu-ESs" id="zLX-gt-dWd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJI-Bn-D0P" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="541" y="-371"/>
         </scene>
     </scenes>
 </document>
